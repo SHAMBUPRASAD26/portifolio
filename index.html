@@ -10,31 +10,31 @@
       font-family: 'Inter', sans-serif;
       margin: 0;
       padding: 0;
-      background-color: #f4f4f4;
       color: #333;
+      background: linear-gradient(to right, #f4f4f4, #e4e8ff);
     }
     header {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 4rem 2rem 2rem;
       background-color: #2d2dff;
       color: white;
-      padding: 2rem;
       text-align: center;
     }
+    header img {
+      width: 150px;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 4px solid white;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      margin-bottom: 1rem;
+    }
     header h1 {
-      margin: 0.2rem 0;
-    }
-    section {
-      max-width: 900px;
-      margin: 2rem auto;
-      padding: 0 1rem;
-    }
-    h2 {
-      color: #2d2dff;
-    }
-    ul {
-      padding-left: 1.2rem;
-    }
-    a {
-      text-decoration: none;
+      font-size: 2.5rem;
+      margin: 0.5rem 0;
     }
     .links {
       margin-top: 1rem;
@@ -54,17 +54,53 @@
       background-color: #ffffff;
       color: #2d2dff;
     }
+    .download-btn {
+      margin-top: 1rem;
+      padding: 10px 20px;
+      background-color: white;
+      color: #2d2dff;
+      font-weight: bold;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background 0.3s;
+    }
+    .download-btn:hover {
+      background-color: #dcdcff;
+    }
+    section {
+      max-width: 900px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+      animation: fadeIn 1s ease-in-out;
+    }
     .card {
       background: white;
-      padding: 1rem;
+      padding: 1.5rem;
       margin-bottom: 2rem;
       border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.05);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+      transition: transform 0.3s ease;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+    }
+    h2 {
+      color: #2d2dff;
+    }
+    ul {
+      padding-left: 1.2rem;
+    }
+    @keyframes fadeIn {
+      from {opacity: 0; transform: translateY(10px);}
+      to {opacity: 1; transform: translateY(0);}
     }
   </style>
 </head>
 <body>
   <header>
+    <img src="profile-circle.png" alt="Shambu Prasad Jakka">
     <h1>Shambu Prasad Jakka</h1>
     <p>AI Intern | Backend Developer | Microsoft Learn Student Ambassador</p>
     <div class="links">
@@ -75,69 +111,75 @@
       <a href="https://www.credly.com/users/shambu-prasad-jakka" target="_blank">Credly</a>
       <a href="https://www.hackerrank.com/21A31A1260" target="_blank">HackerRank</a>
     </div>
+    <a class="download-btn" href="Shambu_Prasad_Resume.pdf" download>Download Resume</a>
   </header>
 
   <section>
-    <div class="card">
+       <div class="card">
       <h2>About Me</h2>
-      <p>I’m a final-year B.Tech student in Information Technology from Pragati Engineering College with a CGPA of 8.61. Passionate about AI, Cloud, and Backend Development, I’ve contributed to building intelligent systems like the Infosys Chatbot using OpenAI. I’m also the President of my college's Cloud Computing Club and a team representative in Smart India Hackathon Level 2. My career vision is to work with leading global technology companies to build impactful solutions.</p>
+      <p>I’m a final-year B.Tech IT student at Pragati Engineering College with a CGPA of 8.61. As an AI intern at Infosys and a Microsoft Learn Student Ambassador, I specialize in AI, backend development, and cloud technologies. I'm passionate about creating smart applications and solving real-world challenges using modern tools and frameworks.</p>
     </div>
 
     <div class="card">
       <h2>Experience</h2>
       <ul>
-        <li><strong>AI Intern – Infosys Springboard</strong> (Apr–Jun 2024)<br/>Developed a custom AI chatbot using OpenAI APIs, real-time web scraping, and Qdrant vector database for Infosys. Integrated intelligent query handling and improved data relevance with custom AI models.</li>
-        <li><strong>AICTE Virtual Internship – AWS AIML</strong><br/>Completed practical tasks using AWS Machine Learning tools, including SageMaker, Comprehend, and Rekognition.</li>
+        <li><strong>AI Intern – Infosys Springboard (Apr–Jun 2024)</strong><br>
+        - Developed AI chatbot using OpenAI APIs, web scraping, and Qdrant DB for Infosys.<br>
+        - Created custom AI models and optimized data retrieval.</li>
+        <li><strong>AICTE Virtual Internship – AWS AIML</strong><br>
+        - Hands-on experience with AWS ML tools like SageMaker, Rekognition, Comprehend.</li>
       </ul>
     </div>
 
     <div class="card">
       <h2>Projects</h2>
       <ul>
-        <li><strong>Infosys Chatbot:</strong> AI-powered chatbot using OpenAI, web scraping, and Qdrant for Infosys internal use.</li>
-        <li><strong>IPL Ticket Booking System:</strong> Full-stack Angular & ASP.NET app with MySQL backend, user roles, and seat mapping.</li>
-        <li><strong>Backend Bookstore:</strong> Node.js & MongoDB project with secure REST APIs and Postman validation.</li>
-        <li><strong>Python Utilities:</strong> Includes QR Code Generator, Dice Simulator, ATM System, Rock-Paper-Scissors Game, and Car Showroom Management System.</li>
-        <li><strong>AWS Mini Project:</strong> Setup and tested VPC peering between two Virtual Private Clouds on AWS for secure communication.</li>
+        <li><strong>Infosys Chatbot</strong> – Built AI chatbot using OpenAI, Qdrant, real-time scraping.</li>
+        <li><strong>Book Management REST API</strong> – Node.js, Express.js, MongoDB API with CRUD operations.</li>
+        <li><strong>Angular Todo App</strong> – Angular 16+ app using Signals, Directives, Pipes, and RxJS.</li>
+        <li><strong>AWS VPC Project</strong> – Established secure VPC peering between AWS networks.</li>
+        <li><strong>Python Projects</strong> – ATM system, QR generator, Dice simulator, Rock-Paper-Scissors, etc.</li>
       </ul>
     </div>
 
     <div class="card">
-      <h2>Skills</h2>
-      <p><strong>Programming:</strong> C, Java, Python<br/>
-         <strong>Web Technologies:</strong> HTML, CSS, Angular, ASP.NET<br/>
-         <strong>Databases:</strong> SQL, MySQL, MongoDB<br/>
-         <strong>Tools & Platforms:</strong> GitHub, VS Code, Postman<br/>
-         <strong>Cloud:</strong> Azure, AWS, Google Cloud<br/>
-         <strong>Domains:</strong> Artificial Intelligence, Cloud Computing, Backend Development</p>
+      <h2>Technical Skills</h2>
+      <ul>
+        <li><strong>Languages:</strong> Python, Java, C</li>
+        <li><strong>Web Technologies:</strong> HTML, CSS, Angular, ASP.NET</li>
+        <li><strong>Databases:</strong> SQL, MySQL, MongoDB</li>
+        <li><strong>Tools:</strong> GitHub, Postman, VS Code</li>
+        <li><strong>Cloud Platforms:</strong> Azure, AWS, Google Cloud</li>
+        <li><strong>Other:</strong> Backend Development, AI/ML, API Design</li>
+      </ul>
     </div>
 
     <div class="card">
       <h2>Certifications</h2>
       <ul>
         <li>Microsoft: AI-900, AZ-900, DP-100, DP-600, AI-102</li>
-        <li>AWS: Cloud Practitioner</li>
         <li>Google Cloud: Associate Cloud Engineer</li>
+        <li>AWS: Cloud Practitioner</li>
+        <li>Infosys Springboard: AI Primer, AI Foundation</li>
         <li>NPTEL: Cloud Computing</li>
-        <li>Infosys: AI Primer Certification, AI Foundation Certification</li>
-        <li>Udemy: Java Programming – Complete Beginner to Advanced</li>
+        <li>Udemy: Java Programming (Beginner to Advanced)</li>
       </ul>
     </div>
 
     <div class="card">
       <h2>Accomplishments</h2>
       <ul>
-        <li>Secured 1st rank in second semester (Academic Achievement)</li>
-        <li>President of the Cloud Computing Club</li>
-        <li>Smart India Hackathon Level 2 Finalist</li>
+        <li>1st Rank – 2nd Semester</li>
+        <li>President – Cloud Computing Club</li>
+        <li>Finalist – Smart India Hackathon (Level 2)</li>
       </ul>
     </div>
 
     <div class="card">
       <h2>Volunteering</h2>
       <ul>
-        <li>Microsoft Learn Student Ambassador (Nov 2023–Present)</li>
-        <li>NSS Volunteer (Aug 2023–Present)</li>
+        <li>Microsoft Learn Student Ambassador (Nov 2023 – Present)</li>
+        <li>NSS Volunteer (Aug 2023 – Present)</li>
       </ul>
     </div>
 
@@ -152,13 +194,14 @@
     <div class="card">
       <h2>Interests</h2>
       <ul>
-        <li>Cricket – Active team player and strategist</li>
-        <li>Reading – Avid novel reader fostering critical thinking</li>
-        <li>Music – Enthusiast across multiple genres</li>
-        <li>Film – Exploring storytelling and creativity</li>
-        <li>Technology – Constantly following emerging tech trends</li>
+        <li>Cricket – Teamwork & strategy</li>
+        <li>Reading – Novels & creative thinking</li>
+        <li>Music – Diverse taste for inspiration</li>
+        <li>Film – Visual storytelling & creativity</li>
+        <li>Technology – Passionate about emerging trends</li>
       </ul>
     </div>
   </section>
 </body>
 </html>
+
