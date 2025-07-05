@@ -1,207 +1,303 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Portfolio of Shambu Prasad Jakka - Software Developer | AI & Cloud Enthusiast" />
   <title>Shambu Prasad Jakka | Portfolio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet" />
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <style>
+    :root {
+      --bg: #0f172a;
+      --text: #f1f5f9;
+      --accent: #38bdf8;
+      --secondary: #1e293b;
+      --border: #334155;
+    }
+
+    [data-theme="light"] {
+      --bg: #f8fafc;
+      --text: #0f172a;
+      --accent: #0ea5e9;
+      --secondary: #e2e8f0;
+      --border: #cbd5e1;
+    }
+
     body {
-      font-family: 'Inter', sans-serif;
+      font-family: 'Poppins', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      transition: background 0.4s, color 0.4s;
+    }
+
+    * {
       margin: 0;
       padding: 0;
-      color: #333;
-      background: linear-gradient(to right, #f4f4f4, #e4e8ff);
+      box-sizing: border-box;
     }
-    header {
+
+    .container {
+      width: 90%;
+      max-width: 1100px;
+      margin: auto;
+      padding: 3rem 0;
+    }
+
+    nav {
+      position: sticky;
+      top: 0;
+      background: var(--secondary);
       display: flex;
-      flex-direction: column;
+      justify-content: space-between;
       align-items: center;
-      justify-content: center;
-      padding: 4rem 2rem 2rem;
-      background-color: #2d2dff;
-      color: white;
-      text-align: center;
+      padding: 1rem 2rem;
+      z-index: 1000;
+      border-bottom: 1px solid var(--border);
     }
-    header img {
-      width: 150px;
-      height: 150px;
-      object-fit: cover;
-      border-radius: 50%;
-      border: 4px solid white;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+
+    nav h1 {
+      color: var(--accent);
+    }
+
+    nav ul {
+      display: flex;
+      gap: 1.2rem;
+      list-style: none;
+    }
+
+    nav ul li a {
+      color: var(--text);
+      font-weight: 500;
+    }
+
+    .toggle {
+      background: none;
+      border: 2px solid var(--accent);
+      padding: 0.3rem 0.8rem;
+      color: var(--accent);
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    .hero {
+      background: linear-gradient(to right, var(--secondary), var(--bg));
+      text-align: center;
+      padding: 5rem 0;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
       margin-bottom: 1rem;
     }
-    header h1 {
+
+    .hero p {
+      font-size: 1.2rem;
+      color: #cbd5e1;
+    }
+
+    .profile-pic {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 1.5rem;
+      animation: fadeIn 1.5s ease-in-out;
+    }
+
+    .profile-pic img {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      border: 4px solid var(--accent);
+      object-fit: cover;
+    }
+
+    .social-links a {
+      margin: 0 10px;
+      font-size: 1.5rem;
+      color: var(--text);
+      transition: transform 0.3s;
+    }
+
+    .social-links a:hover {
+      color: var(--accent);
+      transform: scale(1.2);
+    }
+
+    section {
+      padding: 3rem 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    section h2 {
+      text-align: center;
       font-size: 2.5rem;
-      margin: 0.5rem 0;
+      color: var(--accent);
+      margin-bottom: 1rem;
     }
-    .links {
-      margin-top: 1rem;
+
+    ul {
+      list-style-type: square;
+      padding-left: 2rem;
     }
-    .links a {
-      margin: 5px;
-      padding: 10px 15px;
-      background-color: transparent;
-      color: #ffffff;
-      border: 2px solid #ffffff;
-      border-radius: 6px;
-      font-weight: 600;
-      display: inline-block;
-      transition: all 0.3s ease-in-out;
+
+    ul li {
+      font-size: 1.1rem;
+      margin-bottom: 0.5rem;
     }
-    .links a:hover {
-      background-color: #ffffff;
-      color: #2d2dff;
-    }
-    .download-btn {
-      margin-top: 1rem;
-      padding: 10px 20px;
-      background-color: white;
-      color: #2d2dff;
-      font-weight: bold;
-      border: none;
-      border-radius: 6px;
-      cursor: pointer;
+
+    .btn {
+      background: var(--accent);
+      color: var(--bg);
+      padding: 0.8rem 1.5rem;
+      border-radius: 5px;
       text-decoration: none;
+      font-weight: bold;
       transition: background 0.3s;
     }
-    .download-btn:hover {
-      background-color: #dcdcff;
+
+    .btn:hover {
+      background: #0ea5e9;
     }
-    section {
-      max-width: 900px;
-      margin: 2rem auto;
-      padding: 0 1rem;
-      animation: fadeIn 1s ease-in-out;
+
+    .footer {
+      background: var(--secondary);
+      color: #94a3b8;
+      text-align: center;
+      padding: 1.5rem 0;
+      font-size: 0.9rem;
     }
-    .card {
-      background: white;
-      padding: 1.5rem;
-      margin-bottom: 2rem;
-      border-radius: 10px;
-      box-shadow: 0 10px 20px rgba(0,0,0,0.05);
-      transition: transform 0.3s ease;
-    }
-    .card:hover {
-      transform: translateY(-5px);
-    }
-    h2 {
-      color: #2d2dff;
-    }
-    ul {
-      padding-left: 1.2rem;
-    }
+
     @keyframes fadeIn {
-      from {opacity: 0; transform: translateY(10px);}
-      to {opacity: 1; transform: translateY(0);}
+      from {
+        opacity: 0;
+        transform: scale(0.95);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
     }
   </style>
 </head>
+
 <body>
-  <header>
-    <img src="profile-circle.png" alt="Shambu Prasad Jakka">
-    <h1>Shambu Prasad Jakka</h1>
-    <p>AI Intern | Backend Developer | Microsoft Learn Student Ambassador</p>
-    <div class="links">
-      <a href="mailto:jakka.shambu@gmail.com">Email</a>
-      <a href="https://www.linkedin.com/in/shambu-prasad-jakka" target="_blank">LinkedIn</a>
-      <a href="https://github.com/SHAMBUPRASAD26" target="_blank">GitHub</a>
-      <a href="https://leetcode.com/21A31A1260/" target="_blank">LeetCode</a>
-      <a href="https://www.credly.com/users/shambu-prasad-jakka" target="_blank">Credly</a>
-      <a href="https://www.hackerrank.com/21A31A1260" target="_blank">HackerRank</a>
+  <nav>
+    <h1>Shambu</h1>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#certifications">Certifications</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <button class="toggle" onclick="toggleTheme()">Toggle Mode</button>
+  </nav>
+
+  <header class="hero" id="home" data-aos="fade-up">
+    <div class="container">
+      <div class="profile-pic">
+        <img src="profile.jpg" alt="Shambu Prasad Jakka" />
+      </div>
+      <h1>Shambu Prasad Jakka</h1>
+      <p>Software Developer | AI & Cloud Enthusiast</p>
+      <div class="social-links">
+        <a href="https://github.com/SHAMBUPRASAD26" target="_blank"><i class="fab fa-github"></i></a>
+        <a href="https://www.linkedin.com/in/shambu-prasad-jakka" target="_blank"><i class="fab fa-linkedin"></i></a>
+        <a href="https://www.hackerrank.com/21A31A1260" target="_blank"><i class="fab fa-hackerrank"></i></a>
+        <a href="https://leetcode.com/21A31A1260" target="_blank"><i class="fas fa-code"></i></a>
+        <a href="https://www.credly.com/users/shambu-prasad-jakka" target="_blank"><i class="fas fa-award"></i></a>
+      </div>
     </div>
-    <a class="download-btn" href="shambu new.pdf" download>Download Resume</a>
   </header>
 
-  <section>
-       <div class="card">
+  <section class="about" id="about" data-aos="fade-up">
+    <div class="container">
       <h2>About Me</h2>
-      <p>I’m a final-year B.Tech IT student at Pragati Engineering College with a CGPA of 8.61. As an AI intern at Infosys and a Microsoft Learn Student Ambassador, I specialize in AI, backend development, and cloud technologies. I'm passionate about creating smart applications and solving real-world challenges using modern tools and frameworks.</p>
+      <p style="text-align:center; max-width: 800px; margin:auto; font-size:1.1rem;">I am a B.Tech Information Technology student from Pragati Engineering College with a CGPA of 8.61. Passionate about AI, Cloud Computing, and Backend Development. I enjoy building intelligent systems and contributing to innovative projects.</p>
     </div>
+  </section>
 
-    <div class="card">
-      <h2>Experience</h2>
+  <section class="skills" id="skills" data-aos="fade-up">
+    <div class="container">
+      <h2>Skills</h2>
       <ul>
-        <li><strong>AI Intern – Infosys Springboard (Apr–Jun 2024)</strong><br>
-        - Developed AI chatbot using OpenAI APIs, web scraping, and Qdrant DB for Infosys.<br>
-        - Created custom AI models and optimized data retrieval.</li>
-        <li><strong>AICTE Virtual Internship – AWS AIML</strong><br>
-        - Hands-on experience with AWS ML tools like SageMaker, Rekognition, Comprehend.</li>
-      </ul>
-    </div>
-
-    <div class="card">
-      <h2>Projects</h2>
-      <ul>
-        <li><strong>Infosys Chatbot</strong> – Built AI chatbot using OpenAI, Qdrant, real-time scraping.</li>
-        <li><strong>Book Management REST API</strong> – Node.js, Express.js, MongoDB API with CRUD operations.</li>
-        <li><strong>Angular Todo App</strong> – Angular 16+ app using Signals, Directives, Pipes, and RxJS.</li>
-        <li><strong>AWS VPC Project</strong> – Established secure VPC peering between AWS networks.</li>
-        <li><strong>Python Projects</strong> – ATM system, QR generator, Dice simulator, Rock-Paper-Scissors, etc.</li>
-      </ul>
-    </div>
-
-    <div class="card">
-      <h2>Technical Skills</h2>
-      <ul>
-        <li><strong>Languages:</strong> Python, Java, C</li>
-        <li><strong>Web Technologies:</strong> HTML, CSS, Angular, ASP.NET</li>
-        <li><strong>Databases:</strong> SQL, MySQL, MongoDB</li>
-        <li><strong>Tools:</strong> GitHub, Postman, VS Code</li>
-        <li><strong>Cloud Platforms:</strong> Azure, AWS, Google Cloud</li>
-        <li><strong>Other:</strong> Backend Development, AI/ML, API Design</li>
-      </ul>
-    </div>
-
-    <div class="card">
-      <h2>Certifications</h2>
-      <ul>
-        <li>Microsoft: AI-900, AZ-900, DP-100, DP-600, AI-102</li>
-        <li>Google Cloud: Associate Cloud Engineer</li>
-        <li>AWS: Cloud Practitioner</li>
-        <li>Infosys Springboard: AI Primer, AI Foundation</li>
-        <li>NPTEL: Cloud Computing</li>
-        <li>Udemy: Java Programming (Beginner to Advanced)</li>
-      </ul>
-    </div>
-
-    <div class="card">
-      <h2>Accomplishments</h2>
-      <ul>
-        <li>1st Rank – 2nd Semester</li>
-        <li>President – Cloud Computing Club</li>
-        <li>Finalist – Smart India Hackathon (Level 2)</li>
-      </ul>
-    </div>
-
-    <div class="card">
-      <h2>Volunteering</h2>
-      <ul>
-        <li>Microsoft Learn Student Ambassador (Nov 2023 – Present)</li>
-        <li>NSS Volunteer (Aug 2023 – Present)</li>
-      </ul>
-    </div>
-
-    <div class="card">
-      <h2>Languages</h2>
-      <ul>
-        <li>English – Fluent</li>
-        <li>Telugu – Native</li>
-      </ul>
-    </div>
-
-    <div class="card">
-      <h2>Interests</h2>
-      <ul>
-        <li>Cricket – Teamwork & strategy</li>
-        <li>Reading – Novels & creative thinking</li>
-        <li>Music – Diverse taste for inspiration</li>
-        <li>Film – Visual storytelling & creativity</li>
-        <li>Technology – Passionate about emerging trends</li>
+        <li>C, Java, Python</li>
+        <li>HTML, CSS, Angular</li>
+        <li>ASP.NET, MySQL, MongoDB</li>
+        <li>SQL, Git, VS Code</li>
+        <li>Cloud (Azure, AWS, GCP), AI</li>
       </ul>
     </div>
   </section>
-</body>
-</html>
 
+  <section class="projects" id="projects" data-aos="fade-up">
+    <div class="container">
+      <h2>Projects</h2>
+      <ul>
+        <li><strong>Infosys Chatbot:</strong> AI-powered chatbot using OpenAI, Qdrant, and Web Scraping</li>
+        <li><strong>Book Management API:</strong> Node.js, Express, MongoDB CRUD app with modular routing</li>
+        <li><strong>Angular Todo App:</strong> Dynamic task manager using Angular 16+, RxJS, Custom Pipes</li>
+        <li><strong>Python Projects:</strong> ATM System, QR Generator, Dice Roller, and more</li>
+        <li><strong>AWS Mini Project:</strong> Setup VPC peering for cloud communication</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="certifications" id="certifications" data-aos="fade-up">
+    <div class="container">
+      <h2>Certifications</h2>
+      <ul>
+        <li>Microsoft: AI-900, AZ-900, DP-100, DP-600, AI-102</li>
+        <li>Google Cloud Associate Cloud Engineer</li>
+        <li>AWS Cloud Practitioner</li>
+        <li>NPTEL Cloud Computing</li>
+        <li>Infosys Springboard – AI Primer & AI Foundation</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="resume" id="resume" data-aos="fade-up">
+    <div class="container" style="text-align: center;">
+      <h2>Resume</h2>
+      <a href="shambu_new.pdf" download class="btn">Download Resume</a>
+    </div>
+  </section>
+
+  <section class="contact" id="contact" data-aos="fade-up">
+    <div class="container">
+      <h2>Contact Me</h2>
+      <p>Email: <a href="mailto:jakka.shambu@gmail.com">jakka.shambu@gmail.com</a></p>
+      <p>Phone: +91 9949343579</p>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2025 Shambu Prasad Jakka. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init();
+
+    function toggleTheme() {
+      const current = document.documentElement.getAttribute("data-theme") || "dark";
+      const next = current === "dark" ? "light" : "dark";
+      document.documentElement.setAttribute("data-theme", next);
+      localStorage.setItem("theme", next);
+    }
+
+    window.onload = () => {
+      const stored = localStorage.getItem("theme");
+      if (stored) {
+        document.documentElement.setAttribute("data-theme", stored);
+      }
+    };
+  </script>
+</body>
+
+</html>
