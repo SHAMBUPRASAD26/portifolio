@@ -41,11 +41,6 @@
       transition: background 0.4s, color 0.4s;
     }
 
-    a {
-      color: var(--accent);
-      text-decoration: none;
-    }
-
     .container {
       width: 90%;
       max-width: 1100px;
@@ -53,7 +48,6 @@
       padding: 3rem 0;
     }
 
-    /* NAVBAR */
     nav {
       position: sticky;
       top: 0;
@@ -68,7 +62,6 @@
 
     nav h1 {
       color: var(--accent);
-      font-weight: 600;
     }
 
     nav ul {
@@ -91,7 +84,6 @@
       cursor: pointer;
     }
 
-    /* HERO */
     .hero {
       background: linear-gradient(to right, var(--secondary), var(--bg));
       text-align: center;
@@ -129,7 +121,6 @@
       transform: scale(1.2);
     }
 
-    /* SECTIONS */
     section {
       padding: 3rem 0;
       border-bottom: 1px solid var(--border);
@@ -150,8 +141,8 @@
     }
 
     ul li {
-      font-size: 1.1rem;
-      margin-bottom: 0.7rem;
+      font-size: 1.05rem;
+      margin-bottom: 0.8rem;
       line-height: 1.6;
     }
 
@@ -161,14 +152,8 @@
       padding: 0.8rem 1.5rem;
       border-radius: 5px;
       font-weight: bold;
-      transition: background 0.3s;
     }
 
-    .btn:hover {
-      background: #0ea5e9;
-    }
-
-    /* FOOTER */
     .footer {
       background: var(--secondary);
       color: #94a3b8;
@@ -187,6 +172,7 @@
     <ul>
       <li><a href="#about">About</a></li>
       <li><a href="#skills">Skills</a></li>
+      <li><a href="#internships">Internships</a></li>
       <li><a href="#projects">Projects</a></li>
       <li><a href="#certifications">Certifications</a></li>
       <li><a href="#contact">Contact</a></li>
@@ -195,14 +181,13 @@
   </nav>
 
   <!-- HERO -->
-  <header class="hero" id="home" data-aos="fade-up">
+  <header class="hero" data-aos="fade-up">
     <div class="container">
       <div class="profile-pic">
         <img src="profile-circle.png" alt="Shambu Prasad Jakka" />
       </div>
       <h1>Shambu Prasad Jakka</h1>
       <p>Software Developer | Java & Python | AI, Cloud & Backend Engineer</p>
-
       <div class="social-links">
         <a href="https://github.com/SHAMBUPRASAD26" target="_blank"><i class="fab fa-github"></i></a>
         <a href="https://www.linkedin.com/in/shambu-prasad-jakka" target="_blank"><i class="fab fa-linkedin"></i></a>
@@ -217,13 +202,10 @@
   <section id="about" data-aos="fade-up">
     <div class="container">
       <h2>About Me</h2>
-      <p style="text-align:center; max-width:900px; margin:auto; font-size:1.1rem;">
+      <p style="text-align:center; max-width:900px; margin:auto;">
         I am a B.Tech Information Technology graduate with a CGPA of 8.44 from Pragati Engineering College.
         I specialize in Backend Development, Artificial Intelligence, and Cloud Computing.
-        I have hands-on experience building scalable REST APIs, AI-powered chatbots using OpenAI and LangChain,
-        and secure cloud networking solutions on AWS. I have completed internships at Infosys Springboard
-        and Revature and currently serve as a Microsoft Learn Student Ambassador and President of the
-        Cloud Computing Club.
+        I have hands-on experience in building scalable REST APIs, AI-powered chatbots, and cloud networking solutions.
       </p>
     </div>
   </section>
@@ -237,9 +219,36 @@
         <li><strong>Backend:</strong> Spring Boot, REST APIs, JDBC, JPA, Hibernate, Flask API, ASP.NET</li>
         <li><strong>Frontend:</strong> HTML, CSS, JavaScript, TypeScript, Angular</li>
         <li><strong>Databases:</strong> SQL, MySQL, MongoDB</li>
-        <li><strong>Cloud & DevOps:</strong> AWS (VPC Peering, IAM), Azure, Google Cloud, Docker</li>
-        <li><strong>AI & Data:</strong> OpenAI, LangChain, Qdrant, Web Scraping, NumPy, Pandas</li>
-        <li><strong>Tools:</strong> Git, GitHub, Postman, VS Code, JUnit, Mockito</li>
+        <li><strong>Cloud & DevOps:</strong> AWS, Azure, Google Cloud, Docker</li>
+        <li><strong>AI Tools:</strong> OpenAI, LangChain, Qdrant, Web Scraping</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- INTERNSHIPS (AS-IS FROM RESUME) -->
+  <section id="internships" data-aos="fade-up">
+    <div class="container">
+      <h2>Internship Experience</h2>
+      <ul>
+        <li>
+          <strong>Infosys Springboard – AI Intern (April – June 2024)</strong><br/>
+          Developed an AI-powered Infosys Chatbot using a Retrieval-Augmented Generation (RAG) workflow with
+          LangChain and OpenAI GPT-3.5 to deliver accurate context-aware responses. Built the knowledge base by
+          scraping and preprocessing Infosys website data, generating embeddings and storing them in a Qdrant
+          vector database hosted locally via Docker. Designed an interactive Streamlit chat interface and
+          implemented the full backend pipeline including text processing, embedding generation, vector search,
+          document retrieval, and LLM response generation, resulting in a fully functional end-to-end
+          conversational AI system.
+        </li>
+
+        <li>
+          <strong>Revature – Java Full Stack Trainee (July – October 2025)</strong><br/>
+          Worked extensively on backend development using Java, Spring Boot, REST APIs, JDBC, JPA, Hibernate,
+          MVC architecture, and MySQL. Developed backend modules with CRUD operations, ORM mapping, input
+          validation, and exception handling following layered architecture. Designed and tested RESTful APIs
+          using JUnit and Postman, collaborated using Git and GitHub, and gained exposure to CI/CD concepts,
+          Docker, AWS fundamentals, and frontend basics in HTML, CSS, JavaScript, and Angular.
+        </li>
       </ul>
     </div>
   </section>
@@ -249,12 +258,11 @@
     <div class="container">
       <h2>Projects</h2>
       <ul>
-        <li><strong>Infosys AI Chatbot:</strong> Built an AI-powered chatbot using LangChain and OpenAI GPT with a RAG workflow, Qdrant vector database, and Streamlit UI.</li>
-        <li><strong>Social Media Messaging API:</strong> Developed secure REST APIs using Java, Spring Boot, and MySQL with authentication and CRUD operations.</li>
-        <li><strong>Book Management REST API:</strong> Created a scalable backend using Node.js, Express.js, and MongoDB.</li>
-        <li><strong>Angular To-Do Application:</strong> Developed an Angular 16+ SPA with RxJS-based state management and reusable components.</li>
-        <li><strong>AWS VPC Mini Project:</strong> Configured enterprise-level VPC peering, routing, and IAM security.</li>
-        <li><strong>Full Stack Recipe Management System:</strong> Built a Java + JDBC backend with HTML/CSS/JS frontend and complete CRUD workflows.</li>
+        <li><strong>Infosys AI Chatbot</strong> – RAG-based chatbot using LangChain, OpenAI, Qdrant, Streamlit</li>
+        <li><strong>Social Media Messaging API</strong> – Java, Spring Boot, REST, MySQL</li>
+        <li><strong>Book Management REST API</strong> – Node.js, Express.js, MongoDB</li>
+        <li><strong>Angular To-Do Application</strong> – Angular 16+, RxJS</li>
+        <li><strong>AWS VPC Mini Project</strong> – VPC Peering, IAM, Routing</li>
       </ul>
     </div>
   </section>
@@ -267,25 +275,15 @@
         <li>Microsoft: AI-900, AZ-900, DP-100, DP-600, AI-102</li>
         <li>Google Cloud: Associate Cloud Engineer</li>
         <li>AWS: Cloud Practitioner</li>
-        <li>Infosys Springboard: Artificial Intelligence Foundation</li>
         <li>NPTEL: Cloud Computing</li>
-        <li>Udemy: Java Programming (Beginner to Advanced)</li>
       </ul>
-    </div>
-  </section>
-
-  <!-- RESUME -->
-  <section data-aos="fade-up">
-    <div class="container" style="text-align:center;">
-      <h2>Resume</h2>
-      <a href="Shambu_Resume.pdf" download class="btn">Download Resume</a>
     </div>
   </section>
 
   <!-- CONTACT -->
   <section id="contact" data-aos="fade-up">
     <div class="container" style="text-align:center;">
-      <h2>Contact Me</h2>
+      <h2>Contact</h2>
       <p>Email: <a href="mailto:jakka.shambu@gmail.com">jakka.shambu@gmail.com</a></p>
       <p>Phone: +91 99493 43579</p>
       <p>Location: Hyderabad, India</p>
@@ -297,24 +295,15 @@
     <p>&copy; 2025 Shambu Prasad Jakka. All rights reserved.</p>
   </footer>
 
-  <!-- SCRIPTS -->
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>
     AOS.init();
-
     function toggleTheme() {
       const current = document.documentElement.getAttribute("data-theme") || "dark";
       const next = current === "dark" ? "light" : "dark";
       document.documentElement.setAttribute("data-theme", next);
       localStorage.setItem("theme", next);
     }
-
-    window.onload = () => {
-      const stored = localStorage.getItem("theme");
-      if (stored) {
-        document.documentElement.setAttribute("data-theme", stored);
-      }
-    };
   </script>
 
 </body>
